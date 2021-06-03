@@ -1,10 +1,13 @@
-package models;
+package sample.models;
+
+import java.sql.Date;
 
 public class Reservation {
     private int reservationId;
     private boolean withBreakfast;
-    private static int lastNumber;
     private int stayingLength;
+
+    private static int lastNumber;
 
     private Guest guest;
     private Room room;

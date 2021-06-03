@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.StartScreenController">
+<rowConstraints>
+    <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="180.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="279.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="343.0" minHeight="10.0" prefHeight="337.0" vgrow="SOMETIMES" />
+</rowConstraints>
+<columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="0.0" prefWidth="73.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="448.0" minWidth="10.0" prefWidth="432.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="90.0" />
+</columnConstraints>
+<HBox alignment="CENTER" prefHeight="251.0" prefWidth="448.0" spacing="30" GridPane.columnIndex="1" GridPane.rowIndex="1">
+    <Button onMousePressed="#loginButtonPressed" text="Log in" />
+    <Button onMousePressed="#registerButtonPressed" text="Registrate" />
+</HBox>
+<Button onMousePressed="#employeeLoginButtonPressed" text="Employee login" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+</GridPane>
