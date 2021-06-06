@@ -9,7 +9,7 @@ class ReservationTest {
     void calculateCost() {
         Hotel hotel = new Hotel();
         Room room = new Room(true, false, hotel);
-        Guest guest = new Guest(20);
+        Guest guest = new Guest("Aad","Haanstra","AadHaanstra@gmail.com","abc123", 20);
         Reservation reservation = new Reservation(guest, room, false, 5);
         assertEquals(25,reservation.calculateCost());
         room.setSeaView(true);
@@ -23,7 +23,7 @@ class ReservationTest {
     void calculateStayDiscount(){
         Hotel hotel = new Hotel();
         Room room = new Room(true, false, hotel);
-        Guest guest = new Guest(20);
+        Guest guest = new Guest("Aad","Haanstra","AadHaanstra@gmail.com", "abc123",20);
         Reservation reservation = new Reservation(guest, room, false, 3);
         assertEquals(0, reservation.calculateStayDiscount(), 0.00001);
         reservation.setStayingLength(4);
@@ -43,7 +43,7 @@ class ReservationTest {
     {
         Hotel hotel = new Hotel();
         Room room = new Room(true, false, hotel);
-        Guest guest = new Guest(17);
+        Guest guest = new Guest("Aad","Haanstra","AadHaanstra@gmail.com", "abc123",17);
         Reservation reservation = new Reservation(guest, room, true, 4);
         assertEquals(34.0, reservation.calculateTotal(), 0.00001);
         room.setLuxeRoom(false);

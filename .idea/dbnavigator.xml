@@ -8,6 +8,7 @@
   <component name="DBNavigator.Project.DataExportManager">
     <export-instructions>
       <create-header value="true" />
+      <friendly-headers value="false" />
       <quote-values-containing-separator value="true" />
       <quote-all-values value="false" />
       <value-separator value="" />
@@ -26,21 +27,24 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="844328f7-e050-49a8-95bf-f5b14d9bcc8f">
-      <console name="Hotel_DB" type="STANDARD" schema="" session="Main" />
+    <connection id="03c5f3ad-25ae-45f1-a852-a9ec836f9233">
+      <console name="hotel_db" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="844328f7-e050-49a8-95bf-f5b14d9bcc8f" />
+    <connection id="03c5f3ad-25ae-45f1-a852-a9ec836f9233" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
   </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/src/sample/db/db_setup.sql" connection-id="" session-id="MAIN" current-schema="" />
+    <mapping file-url="file://$PROJECT_DIR$/src/sample/db/db_setup.sql" connection-id="03c5f3ad-25ae-45f1-a852-a9ec836f9233" session-id="MAIN" current-schema="hotel_db" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -62,20 +66,17 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="844328f7-e050-49a8-95bf-f5b14d9bcc8f" active="true">
+      <connection id="03c5f3ad-25ae-45f1-a852-a9ec836f9233" active="true">
         <database>
-          <name value="Hotel_DB" />
+          <name value="hotel_db" />
           <description value="" />
           <database-type value="MYSQL" />
-          <config-type value="BASIC" />
-          <database-version value="9999.0" />
+          <config-type value="CUSTOM" />
+          <database-version value="8.0" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
-          <url-type value="DATABASE" />
-          <host value="localhost" />
-          <port value="3306" />
-          <database value="mysql" />
+          <url value="jdbc:mysql://localhost:3306/hotel_db?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC " />
           <type value="USER_PASSWORD" />
           <user value="root" />
           <deprecated-pwd value="Sm9lcmlIQk8wMTc0" />
@@ -108,6 +109,7 @@
           <restore-workspace value="true" />
           <restore-workspace-deep value="true" />
           <environment-type value="default" />
+          <connectivity-timeout value="5" />
           <idle-time-to-disconnect value="30" />
           <idle-time-to-disconnect-pool value="5" />
           <credential-expiry-time value="10" />
@@ -204,8 +206,6 @@
           <object-type name="TABLE" enabled="true" />
           <object-type name="VIEW" enabled="true" />
           <object-type name="MATERIALIZED VIEW" enabled="true" />
-          <object-type name="NESTED TABLE" enabled="false" />
-          <object-type name="COLUMN" enabled="false" />
           <object-type name="INDEX" enabled="true" />
           <object-type name="CONSTRAINT" enabled="true" />
           <object-type name="DATASET TRIGGER" enabled="true" />
@@ -216,8 +216,6 @@
           <object-type name="FUNCTION" enabled="true" />
           <object-type name="PACKAGE" enabled="true" />
           <object-type name="TYPE" enabled="true" />
-          <object-type name="TYPE ATTRIBUTE" enabled="false" />
-          <object-type name="ARGUMENT" enabled="false" />
           <object-type name="DIMENSION" enabled="false" />
           <object-type name="CLUSTER" enabled="false" />
           <object-type name="DBLINK" enabled="true" />

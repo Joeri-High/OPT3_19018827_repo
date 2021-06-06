@@ -1,18 +1,18 @@
 package sample.models;
 
 public class Hotel {
-    private int id;
+    private int hotelId;
     private String naam;
     private static int lastNumber;
 
     public Hotel()
     {
-        this.id = ++lastNumber;
+        this.hotelId = ++lastNumber;
     }
 
     public int getId()
     {
-        return this.id;
+        return this.hotelId;
     }
 
     public String getNaam() {

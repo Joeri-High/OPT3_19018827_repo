@@ -1,7 +1,5 @@
 package sample.models;
 
-import java.sql.Date;
-
 public class Reservation {
     private int reservationId;
     private boolean withBreakfast;

@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import sample.ViewNavigator;
+import sample.db.db_helper;
 
 
 public class LoginScreenController {
@@ -32,6 +33,7 @@ public class LoginScreenController {
     @FXML
     public void login()
     {
+//        if (db_helper.verify)
         ViewNavigator.showView(ViewNavigator.loginScreen);
     }
 

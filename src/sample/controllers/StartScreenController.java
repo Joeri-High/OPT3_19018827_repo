@@ -16,7 +16,7 @@ public class StartScreenController {
     @FXML
     public void registerButtonPressed()
     {
-        ViewNavigator.showView(ViewNavigator.startScreen);
+        ViewNavigator.showView(ViewNavigator.registerScreen);
     }
 
     @FXML

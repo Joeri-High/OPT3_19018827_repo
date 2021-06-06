@@ -1,42 +1,17 @@
 package sample.models;
 
-public class Employee {
-    private int empNumber;
-    private String firstName;
-    private String lastName;
+public class Employee extends Person {
+    private Hotel hotel;
 
-    private static int lastNumber;
-
-    private Hotel werktBij;
-
-    public Employee(String firstName, String lastName, Hotel hotel) {
-        this.empNumber = ++lastNumber;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.werktBij = hotel;
+    public Employee(String firstName, String lastName, String emailAdres, String passWord, int age) {
+        super(firstName, lastName, emailAdres, passWord, age);
     }
 
-    public String getFirstName() {
-        return this.firstName;
+    public Hotel getHotel() {
+        return hotel;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Hotel getWerktBij() {
-        return werktBij;
-    }
-
-    public void setWerktBij(Hotel werktBij) {
-        this.werktBij = werktBij;
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
     }
 }
