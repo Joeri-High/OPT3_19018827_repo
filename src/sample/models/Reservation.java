@@ -1,6 +1,6 @@
 package sample.models;
 
-public class Reservation {
+public class Reservation extends Discount {
     private int reservationId;
     private boolean withBreakfast;
     private int stayingLength;
@@ -19,6 +19,7 @@ public class Reservation {
         this.stayingLength = stayingLength;
     }
 
+    @Override
     public int calculateCost()
     {
         if (room.isSeaView() || (room.isLuxeRoom() && this.withBreakfast))
@@ -29,6 +30,7 @@ public class Reservation {
         }
     }
 
+    @Override
     public double calculateStayDiscount()
     {
         double discount = 0;
@@ -47,6 +49,7 @@ public class Reservation {
         return discount;
     }
 
+    @Override
     public double calculateTotal()
     {
         double ageDiscount = 0;
