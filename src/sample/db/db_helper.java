@@ -19,9 +19,12 @@ public class db_helper {
 
     public db_helper()
     {
+        String url = "jdbc:mysql://localhost:3306.org";
+        String user = "root";
+        String pass = "JoeriHBO0174";
         try {
-            Class.forName("org.mysql.JDBC");
-            dbConnection = DriverManager.getConnection("jdbc:mysql:hotel_db.db");
+            Class.forName("com.mysql.jdbc.Driver");
+            dbConnection = DriverManager.getConnection(url,user,pass);
         } catch (Exception e)
         {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
