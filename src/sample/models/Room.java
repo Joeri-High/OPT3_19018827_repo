@@ -21,6 +21,10 @@ public class Room {
         return roomNumber;
     }
 
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
+    }
+
     public boolean isLuxeRoom() {
         return luxeRoom;
     }

@@ -18,5 +18,4 @@
     <Button onMousePressed="#loginButtonPressed" text="Log in" />
     <Button onMousePressed="#registerButtonPressed" text="Registrate" />
 </HBox>
-<Button onMousePressed="#employeeLoginButtonPressed" text="Employee login" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
 </GridPane>

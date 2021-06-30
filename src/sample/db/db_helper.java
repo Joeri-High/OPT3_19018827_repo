@@ -1,6 +1,9 @@
 package sample.db;
 
+import sample.models.Guest;
+import sample.models.Hotel;
 import sample.models.Person;
+import sample.models.Room;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,14 +22,14 @@ public class db_helper {
 
     public db_helper()
     {
-        String url = "jdbc:mysql://localhost:3306.org";
+        String url = "jdbc:mysql://localhost:3306/hotel_db";
         String user = "root";
         String pass = "JoeriHBO0174";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            System.out.println("Connecting to the database");
             dbConnection = DriverManager.getConnection(url,user,pass);
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
@@ -60,20 +63,23 @@ public class db_helper {
         }
     }
 
-    public boolean registerPerson(Person person)
+    public boolean registerPerson(Guest person)
     {
-        Statement statement = null;
         try {
-            statement = dbConnection.createStatement();
-            ResultSet checkEmail = statement.executeQuery("SELECT emailAdres FROM person WHERE emailAdres = '" + person.getEmailAdres() + "'");
+            Statement statement = dbConnection.createStatement();
+            String query = "SELECT emailAdres FROM person WHERE emailAdres = '" + person.getEmailAdres() + "'";
+            ResultSet result;
+            result = statement.executeQuery(query);
+            System.out.println("Query to check if the emailadres is already is used, executed!");
             int rowCount = 0;
-            while (checkEmail.next())
+            while (result.next())
             {
                 rowCount++;
             }
             if (rowCount <= 0)
             {
-                this.executeSQLQuery("INSERT INTO person (firstName, lastName, emailAdres, passWord, age) VALUES ('" + person.getFirstName() + "', '" + person.getLastName() + "', '" + person.getEmailAdres() + "', '"+ person.getPassWord() + "', '"+ person.getAge() + "'");
+                this.executeSQLQuery("INSERT INTO person (id, firstName, lastName, emailAdres, passWord, age) VALUES (" + person.getId()+ ", '" + person.getFirstName() + "', '" + person.getLastName() + "', '" + person.getEmailAdres() + "', '"+ person.getPassWord() + "', "+ person.getAge());
+                System.out.println("SQL query executed!");
             }
             return rowCount <= 0;
         } catch (SQLException e)
@@ -81,6 +87,31 @@ public class db_helper {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             return false;
         }
+    }
+
+    public boolean verifyLogin(String emailAdres, String passWord)
+    {
+        Statement statement = null;
+        try {
+            statement = dbConnection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT emailAdres FROM person WHERE emailAdres = '" + emailAdres + "' AND passWord = '" + passWord + "'");
+            int rowCount = 0;
+            while (resultSet.next()) {
+                rowCount++;
+            }
+            if (rowCount>0) {
+                System.out.println("Inloggen succesvol!");
+                return true;
+            } else {
+                System.out.println("Inloggen mislukt...");
+                return false;
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+
     }
 
     public ResultSet getResultSetFromDB(String query) throws SQLException {

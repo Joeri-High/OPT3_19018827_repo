@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.controllers.ReservationScreenController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<GridPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ReservationScreenController">
+    <rowConstraints>
+        <RowConstraints maxHeight="205.2" minHeight="3.0" prefHeight="35.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="279.0" minHeight="9.0" prefHeight="205.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="205.2" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="205.2" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="205.2" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="141.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="278.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="181.0" />
+    </columnConstraints>
+    <Text text="All available rooms you are seeing here below!" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+    <TableView fx:id="roomsTable" prefHeight="33.0" prefWidth="133.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+        <columns>
+            <TableColumn fx:id="roomNumber" prefWidth="101.0" text="Room number" />
+            <TableColumn fx:id="luxeRoom" prefWidth="77.0" text="Luxe room" />
+            <TableColumn fx:id="seaView" prefWidth="99.0" text="Sea view" />
+        </columns>
+    </TableView>
+    <HBox GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+        <TextField fx:id="stayingDays" promptText="Days of stay" />
+        <TextField fx:id="selectRoomNumber" promptText="Give room number" />
+        <TextField fx:id="emailAdres" promptText="Email adres"/>
+    </HBox>
+    <VBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <Text text="Tick this box if you want breakfast with your stay!" />
+        <CheckBox fx:id="breakfastIncluded" />
+    </VBox>
+    <Button fx:id="makeReservation" text="Make reservation" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+</GridPane>

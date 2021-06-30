@@ -12,6 +12,7 @@ public class ViewNavigator {
     public static final String loginScreen = "screens/LoginScreen.fxml";
     public static final String startScreen = "screens/StartScreen.fxml";
     public static final String registerScreen = "screens/RegisterScreen.fxml";
+    public static final String reservationScreen = "screens/ReservationScreen.fxml";
 
     private static MainScreenController mainScreenController;
 

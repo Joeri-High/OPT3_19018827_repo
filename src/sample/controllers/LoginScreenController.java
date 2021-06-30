@@ -10,8 +10,10 @@ import sample.db.db_helper;
 
 public class LoginScreenController {
 
+    db_helper db_helper = new db_helper();
+
     @FXML
-    TextField usernameField;
+    TextField emailAdresField;
 
     @FXML
     PasswordField passwordField;
@@ -33,8 +35,12 @@ public class LoginScreenController {
     @FXML
     public void login()
     {
-//        if (db_helper.verify)
-        ViewNavigator.showView(ViewNavigator.loginScreen);
+        if (db_helper.verifyLogin(emailAdresField.getText(),passwordField.getText()))
+        {
+            ViewNavigator.showView(ViewNavigator.reservationScreen);
+        } else {
+            failMessage.setText("Error: the emailadres or password is incorrect!");
+        }
     }
 
 }

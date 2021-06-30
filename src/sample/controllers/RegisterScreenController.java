@@ -7,13 +7,12 @@ import javafx.scene.control.TextField;
 import sample.db.db_helper;
 import sample.ViewNavigator;
 import sample.models.Guest;
-import sample.models.Person;
 
-import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class RegisterScreenController {
 
-    db_helper db_helper = null;
+    db_helper db_helper = new db_helper();
 
     @FXML
     TextField firstNameField;
@@ -46,11 +45,11 @@ public class RegisterScreenController {
     }
 
     @FXML
-    public void registerButton()
+    public boolean registerPerson()
     {
         try {
             int ageField = Integer.parseInt(this.ageField.getText());
-            Person person = new Guest(firstNameField.getText(), lastNameField.getText(), emailAdresField.getText(), passWordField.getText(), ageField);
+            Guest person = new Guest(firstNameField.getText(), lastNameField.getText(), emailAdresField.getText(), passWordField.getText(), ageField);
             System.out.println("Guest with first name " + firstNameField.getText() + " is registrating...");
             if (db_helper.registerPerson(person))
             {
@@ -59,9 +58,11 @@ public class RegisterScreenController {
             } else {
                 failLabel.setText("Something went wrong");
             }
+            return true;
         } catch (Exception e)
         {
             e.printStackTrace();
         }
+        return false;
     }
 }

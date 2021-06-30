@@ -18,10 +18,4 @@ public class StartScreenController {
     {
         ViewNavigator.showView(ViewNavigator.registerScreen);
     }
-
-    @FXML
-    public void employeeLoginButtonPressed()
-    {
-
-    }
 }

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import com.sun.javafx.scene.control.IntegerField?>
 <GridPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.RegisterScreenController">
     <rowConstraints>
+        <RowConstraints maxHeight="205.2" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
         <RowConstraints maxHeight="205.2" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
         <RowConstraints maxHeight="205.2" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
         <RowConstraints maxHeight="205.2" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
@@ -24,6 +23,6 @@
     <PasswordField fx:id="passWordField" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
     <TextField fx:id="ageField" promptText="Age" GridPane.columnIndex="1" GridPane.rowIndex="4" />
     <Button onMousePressed="#backButton" text="Back" GridPane.rowIndex="0" GridPane.halignment="LEFT" GridPane.columnIndex="0"/>
-    <Button onMousePressed="#registerButton" text="Register" GridPane.rowIndex="5" GridPane.halignment="CENTER" GridPane.columnIndex="1"/>
+    <Button onMousePressed="#registerPerson" text="Register" GridPane.rowIndex="6" GridPane.halignment="CENTER" GridPane.columnIndex="1"/>
     <Label fx:id="failLabel" text="" GridPane.rowIndex="5" GridPane.halignment="CENTER" GridPane.columnIndex="1"/>
 </GridPane>
